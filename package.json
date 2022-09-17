@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "npm i moneymafia/repa-sdk && vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"  },
+    "lint": "vue-cli-service lint"
+  },
   "dependencies": {
     "@metamask/detect-provider": "^1.2.0",
     "@moneymafia/repa-sdk": "github:moneymafia/repa-sdk",
