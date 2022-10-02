@@ -1,18 +1,5 @@
 <template>
-	<div class="m-auto max-w-7xl p-5">
-		<div class="flex items-center justify-between h-20">
-			<a href="https://repo.gg" class="relative z-10 flex items-center w-auto text-2xl font-black leading-none text-gray-900 select-none">REPA.GG</a>
-
-			<nav class="items-center justify-center hidden space-x-5 text-gray-200 md:flex lg:space-x-8">
-				<div class="w-0 h-5 border border-r border-yellow-500 opacity-25"></div>
-
-				<a class="relative h-6 group">
-					<span class="relative z-10 px-5 py-2 font-bold leading-tight text-black bg-white border-4 border-gray-900 rounded-lg group-hover:bg-yellow-100">{{ account }}</span>
-					<span class="absolute top-0 right-0 w-full h-10 -mr-1 bg-black rounded-lg"></span>
-				</a>
-			</nav>
-		</div>
-
+	<div class="m-auto max-w-6xl p-5">
 		<div v-if="chain !== network">
 			<section class="bg-black">
 				<div class="relative px-16 pt-20 pb-32 mx-auto max-w-7xl xl:px-16">
@@ -57,63 +44,80 @@
 			</h1>
 		</div>
 
-		<div v-if="chain == network && !txninprocess">
-			<div class="flex flex-col flex-wrap w-full m-auto leading-6 text-left lg:flex-row py-40">
-				<div class="w-full lg:w-8/12">
-					<div class="mb-10">
-						<h3 class="font-semibold text-2xl text-gray-800">SUBSCRIBE TO</h3>
-						<h3 class="font-bold text-xl text-gray-400 py-2">{{ obj.boss }}</h3>
-					</div>
+		<div class="py-20" v-if="chain == network && !txninprocess">
+			<div class="mb-10">
+				<h3 class="font-semibold text-2xl text-gray-800">YOU ARE</h3>
+				<h3 class="font-bold text-xl text-gray-400 py-2">{{ account }}</h3>
+			</div>
 
-					<div class="flex items-center justify-center space-x-2 my-5">
-						<span class="h-px w-16 bg-gray-200"></span>
-						<span class="h-px w-16 bg-gray-200"></span>
-					</div>
+			<div class="flex items-center justify-center space-x-2 my-5">
+				<span class="h-px w-16 bg-gray-200"></span>
+				<span class="h-px w-16 bg-gray-200"></span>
+			</div>
 
-					<div class="mb-10">
-						<h3 class="font-semibold text-2xl text-gray-800">USING TOKEN ({{ tokendata.symbol }})</h3>
-						<h3 class="font-bold text-xl text-gray-400 py-2">{{ obj.token }}</h3>
-					</div>
+			<div class="mb-10">
+				<h3 class="font-semibold text-2xl text-gray-800 uppercase">subscribing TO</h3>
+				<h3 class="font-bold text-xl text-gray-400 py-2">{{ obj.boss }}</h3>
+			</div>
 
-					<div class="flex items-center justify-center space-x-2 my-5">
-						<span class="h-px w-16 bg-gray-200"></span>
-						<span class="h-px w-16 bg-gray-200"></span>
-					</div>
-					<div class="mb-10">
-						<h3 class="font-semibold text-2xl text-gray-800">FOR</h3>
-						<h3 class="font-bold text-xl text-gray-400 py-2">{{ obj.cost }} {{ tokendata.symbol }} / DAY</h3>
-					</div>
+			<div class="flex items-center justify-center space-x-2 my-5">
+				<span class="h-px w-16 bg-gray-200"></span>
+				<span class="h-px w-16 bg-gray-200"></span>
+			</div>
 
-					<div class="flex items-center justify-center space-x-2 my-5">
-						<span class="h-px w-16 bg-gray-200"></span>
-						<span class="h-px w-16 bg-gray-200"></span>
-					</div>
+			<div class="mb-10">
+				<h3 class="font-semibold text-2xl text-gray-800">USING TOKEN ({{ tokendata.symbol }})</h3>
+				<h3 class="font-bold text-xl text-gray-400 py-2">{{ obj.token }}</h3>
+			</div>
 
-					<div class="mb-10" v-if="obj.initdays > 0">
-						<h3 class="font-semibold text-2xl text-gray-800">SETUP CHARGE</h3>
-						<h3 class="font-bold text-xl text-gray-400 py-2">{{ obj.initdays * obj.cost }} {{ tokendata.symbol }}</h3>
-					</div>
-				</div>
-				<div class="w-full lg:w-4/12 m-auto uppercase">
-					<h1 class="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight" v-if="alreadyJoin">
-						<span class="">YOU 🐼 ARE </span>
-						<span class="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline" data-primary="green-400">Subscribed</span>
-					</h1>
+			<div class="flex items-center justify-center space-x-2 my-5">
+				<span class="h-px w-16 bg-gray-200"></span>
+				<span class="h-px w-16 bg-gray-200"></span>
+			</div>
+			<div class="mb-10">
+				<h3 class="font-semibold text-2xl text-gray-800">FOR</h3>
+				<h3 class="font-bold text-xl text-gray-400 py-2">{{ obj.cost }} {{ tokendata.symbol }} / DAY</h3>
+			</div>
 
-					<a
-						v-if="!alreadyJoin && format_allowance < obj.cost * 100"
-						@click="approve"
-						class="px-7 py-4 bg-gray-900 text-white border-2 border-gray-900 hover:bg-white hover:text-gray-900 transition-all ease-out duration-150 rounded-xl flex items-center justify-center text-lg"
-						>Approve {{ tokendata.symbol }}</a
-					>
+			<div class="flex items-center justify-center space-x-2 my-5">
+				<span class="h-px w-16 bg-gray-200"></span>
+				<span class="h-px w-16 bg-gray-200"></span>
+			</div>
 
-					<a
-						v-if="!alreadyJoin && format_allowance > obj.cost * 100"
-						@click="callC"
-						class="px-7 py-4 bg-gray-900 text-white border-2 border-gray-900 hover:bg-white hover:text-gray-900 transition-all ease-out duration-150 rounded-xl flex items-center justify-center text-lg"
-						>Subscribe</a
-					>
-				</div>
+			<div class="mb-10" v-if="obj.initdays > 0">
+				<h3 class="font-semibold text-2xl text-gray-800">SETUP CHARGE</h3>
+				<h3 class="font-bold text-xl text-gray-400 py-2">{{ obj.initdays * obj.cost }} {{ tokendata.symbol }}</h3>
+			</div>
+
+			<div class="uppercase max-w-2xl cursor-pointer" v-if="fullLoaded">
+				<h1 class="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight" v-if="alreadyJoin">
+					<span class="">YOU 🐼 ARE </span>
+					<span class="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline" data-primary="green-400">Subscribed</span>
+				</h1>
+
+				<a
+					v-if="!alreadyJoin && format_allowance < obj.cost * 100"
+					@click="approve"
+					class="px-7 py-4 bg-gray-900 text-white border-2 border-gray-900 hover:bg-white hover:text-gray-900 transition-all ease-out duration-150 rounded-xl flex items-center justify-center text-lg"
+					>Approve {{ tokendata.symbol }}</a
+				>
+
+				<a
+					v-if="!alreadyJoin && format_allowance > obj.cost * 100"
+					@click="callC"
+					class="px-7 py-4 bg-gray-900 text-white border-2 border-gray-900 hover:bg-white hover:text-gray-900 transition-all ease-out duration-150 rounded-xl flex items-center justify-center text-lg"
+					>Subscribe</a
+				>
+			</div>
+
+			<div v-if="!fullLoaded">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20">
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+					/>
+				</svg>
 			</div>
 		</div>
 	</div>
@@ -131,6 +135,7 @@
 	export default {
 		data() {
 			return {
+				fullLoaded: false,
 				obj: '',
 				connected: false,
 				chain: 1,
@@ -278,6 +283,8 @@
 				console.log(subdata);
 
 				this.alreadyJoin = subdata.active;
+
+				this.fullLoaded = true;
 			} else {
 				this.connected = false;
 			}
