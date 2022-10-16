@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "npm i moneymafia/repa-sdk && vue-cli-service serve",
-    "build": "npm i moneymafia/repa-sdk && vue-cli-service build"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "@moneymafia/repa-sdk": "github:moneymafia/repa-sdk",
