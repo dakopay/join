@@ -130,7 +130,7 @@
 
 	import detectEthereumProvider from '@metamask/detect-provider';
 
-	import { setChain, ABI, decodeSubscription, tokenDetails, getUserTokenData, hashing, subscriptions } from '@moneymafia/repa-sdk';
+	import { setChain, ABI, decodeSubscription, tokenDetails, getUserTokenData, hashing, subscriptions } from 'repa-sdk';
 
 	export default {
 		data() {

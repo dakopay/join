@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "npm i moneymafia/repa-sdk && vue-cli-service serve",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@moneymafia/repa-sdk": "github:moneymafia/repa-sdk",
     "@metamask/detect-provider": "^1.2.0",
     "core-js": "^3.8.3",
     "ethers": "^5.5.4",
+    "repa-sdk": "github:projectrepa/SDK",
     "vue": "^3.2.13"
   },
   "devDependencies": {
