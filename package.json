@@ -10,11 +10,14 @@
     "@metamask/detect-provider": "^1.2.0",
     "core-js": "^3.8.3",
     "ethers": "^5.5.4",
+    "mobile-device-detect": "^0.4.3",
     "repa-sdk": "github:projectrepa/SDK",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0"
   }
 }
