@@ -45,7 +45,7 @@
 			this.mobiledevice = isMobile;
 
 			if (window.ethereum) {
-				// window.location.href = this.desktop_url;
+				 window.location.href = this.desktop_url;
 			} else {
 				if (!isMobile) {
 					this.web3connected = false;
