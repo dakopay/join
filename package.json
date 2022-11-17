@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "npm i repa-sdk && vue-cli-service serve",
     "build": "npm i repa-sdk && vue-cli-service build"
   },
   "dependencies": {
