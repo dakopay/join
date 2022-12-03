@@ -130,7 +130,7 @@
 
 	import detectEthereumProvider from '@metamask/detect-provider';
 
-	import { setChain, ABI, decodeSubscription, tokenDetails, getUserTokenData, hashing, subscriptions } from 'repa-sdk';
+	import { setChain, ABI, decodeSubscription, tokenDetails, getUserTokenData, hashing, subscriptions } from 'dakopay-sdk';
 
 	export default {
 		props: ['hash'],

@@ -13,7 +13,7 @@
 					>
 						Looks Correct </router-link
 					><a
-						href="https://repa.gg"
+						href="https://dakopay.com"
 						class="px-7 flex items-center py-4 bg-gray-100 border-2 border-gray-100 hover:border-gray-900 justify-center hover:bg-white transition-all ease-out duration-150 text-gray-900 rounded-xl text-lg"
 						><span>NOPE !</span></a
 					>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-	import { checkAddress } from 'repa-sdk';
+	import { checkAddress } from 'dakopay-sdk';
 
 	export default {
 		props: ['account'],

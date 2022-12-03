@@ -37,7 +37,7 @@
 	</div>
 </template>
 <script>
-	import { checkAddress, encodeSubscription } from 'repa-sdk';
+	import { checkAddress, encodeSubscription } from 'dakopay-sdk';
 	import axios from 'axios';
 
 	export default {

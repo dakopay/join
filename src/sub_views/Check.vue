@@ -38,11 +38,11 @@
 		async mounted() {
 			this.mobiledevice = isMobile;
 
-			this.desktop_url = `https://join.repa.gg/#/join/${this.hash}`;
+			this.desktop_url = `https://join.dakopay.com/#/join/${this.hash}`;
 
-			this.trustwallet_url = `https://link.trustwallet.com/open_url?coin_id=60&url=https://join.repa.gg/#/join/${this.hash}`;
+			this.trustwallet_url = `https://link.trustwallet.com/open_url?coin_id=60&url=https://join.dakopay.com/#/join/${this.hash}`;
 
-			this.metamask_url = `https://metamask.app.link/dapp/join.repa.gg/#/join/${this.hash}`;
+			this.metamask_url = `https://metamask.app.link/dapp/join.dakopay.com/#/join/${this.hash}`;
 
 			if (window.ethereum) {
 				window.location.href = this.desktop_url;
