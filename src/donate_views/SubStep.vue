@@ -62,7 +62,7 @@
 				symbol: coin_data.symbol,
 				price: parseFloat(coin_data.market_data.current_price.usd).toFixed(8),
 				image: coin_data.image.large,
-				description: coin_data.description.en,
+				description: coin_data.description.en.substring(0, 60),
 				homepage: coin_data.links.homepage[0],
 				coingecko: coin_data.links.coingecko,
 				contract: coin_data.contract_address,
